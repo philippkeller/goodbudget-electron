@@ -13,6 +13,7 @@ To start the app with electron
 
 ```
 npm install -g electron-prebuilt
+npm install
 npm start
 ```
 
@@ -20,7 +21,6 @@ To package it into a native OS X app:
 
 ```
 npm install electron-packager -g
-electron-packager ./ goodbudget --platform=darwin --arch=x64 --icon ./goodbudget.png.icns
+electron-packager ./ goodbudget --overwrite --platform=darwin --arch=x64 --icon ~/Downloads/goodbudget.png.icns
+mv goodbudget-darwin-x64/goodbudget.app /Applications/
 ```
-
-the app will be saved into `goodbudget-darwsin-x64/goodbudget.app`
