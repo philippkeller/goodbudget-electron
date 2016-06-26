@@ -7,10 +7,11 @@ const {BrowserWindow} = electron;
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win;
+let data;
 
 function createWindow() {
   // Create the browser window.
-  win = new BrowserWindow({width: 1024, height: 600});
+  win = new BrowserWindow((data && data.bounds) ? data.bounds : {width: 1024, height: 600});
 
   // and load the index.html of the app.
   win.loadURL(`file://${__dirname}/index.html`);
@@ -26,11 +27,6 @@ function createWindow() {
     win = null;
   });
 }
-
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
-// Some APIs can only be used after this event occurs.
-app.on('ready', createWindow);
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
@@ -53,9 +49,24 @@ app.on('activate', () => {
 // code. You can also put them in separate files and require them here.
 
 app.on('ready', () => {
-  globalShortcut.register('cmd+a', function(){
-    win.webContents.send('goodbudget', 'add');
+  var path = require("path");
+  var fs = require("fs");
+  var initPath = path.join(app.getPath('appData'), "init.json");
+  try {
+    data = JSON.parse(fs.readFileSync(initPath, 'utf8'));
+  }
+  catch(e) {
+    console.log('error');
+  }
+  createWindow();
+
+  win.on("close", function() {
+    var data = {
+      bounds: win.getBounds()
+    };
+    fs.writeFileSync(initPath, JSON.stringify(data));
   });
+
   globalShortcut.register('cmd+i', function(){
     win.webContents.send('goodbudget', 'import');
   });
