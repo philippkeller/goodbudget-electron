@@ -2,8 +2,8 @@ standalone goodbudget app for OS X that starts goodbudget into the account view
 
 Keyboard shortcuts:
 
-- cmd-a: add transaction
-- cmd-i: import bank transactions
+- cmd-shift-a: add transaction
+- cmd-shift-i: import bank transactions
 
 ## installation
 
