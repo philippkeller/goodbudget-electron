@@ -32,4 +32,3 @@ mv goodbudget-darwin-x64/goodbudget.app /Applications/
 npm i electron-installer-dmg -g
 electron-installer-dmg goodbudget-darwin-x64/goodbudget.app goodbudget
 ```
-
