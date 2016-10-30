@@ -9,6 +9,11 @@ const importTransactions = function() {
   webView.executeJavaScript('document.getElementById("import-txns").click()');
 }
 
+const clickAll = function() {
+  let webView = document.querySelector('webview#goodbudget');
+  webView.executeJavaScript('$("input[type=checkbox]").each(function() { if(!$(this).attr("checked")) {this.click()}});');
+}
+
 var template = [{
     label: "Application",
     submenu: [
@@ -33,6 +38,7 @@ var template = [{
     submenu: [
       { label: "Add Transaction", accelerator: "Shift+CmdOrCtrl+A", click: function() { addTransaction(); }},
       { label: "Import Transactions", accelerator: "Shift+CmdOrCtrl+I", click: function() { importTransactions(); }},
+      { label: "Select all Checkboxes", accelerator: "Shift+CmdOrCtrl+S", click: function() { clickAll(); }},
     ]}
 ];
 Menu.setApplicationMenu(Menu.buildFromTemplate(template));

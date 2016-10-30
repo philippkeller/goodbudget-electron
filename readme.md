@@ -2,8 +2,9 @@ standalone goodbudget app for OS X that starts goodbudget into the account view
 
 Keyboard shortcuts:
 
-- cmd-a: add transaction
-- cmd-i: import bank transactions
+- cmd-shift-a: add transaction
+- cmd-shift-i: import bank transactions
+- cmd-shift-s: select all (useful when reconciling)
 
 ## installation
 
@@ -21,6 +22,14 @@ To package it into a native OS X app:
 
 ```
 npm install electron-packager -g
-electron-packager ./ goodbudget --overwrite --platform=darwin --arch=x64 --icon ~/Downloads/goodbudget.png.icns
+electron-packager ./ goodbudget --overwrite --platform=darwin --arch=x64 --icon goodbudget.png.icns
 mv goodbudget-darwin-x64/goodbudget.app /Applications/
 ```
+
+## to package it for redistribution (mostly note to self)
+
+```
+npm i electron-installer-dmg -g
+electron-installer-dmg goodbudget-darwin-x64/goodbudget.app goodbudget
+```
+

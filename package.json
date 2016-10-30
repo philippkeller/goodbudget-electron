@@ -10,6 +10,10 @@
   "author": "Philipp Keller",
   "license": "ISC",
   "devDependencies": {
+    "electron-installer-dmg": "^0.1.2",
     "electron-prebuilt": "^1.2.3"
+  },
+  "dependencies": {
+    "keytar": "^3.0.2"
   }
 }
