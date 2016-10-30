@@ -1,4 +1,4 @@
-standalone goodbudget app for OS X that starts goodbudget into the account view
+Standalone goodbudget app for OS X that starts goodbudget into the account view ![Goodbudget in App Switcher](https://goo.gl/qPdvCO)
 
 Keyboard shortcuts:
 
@@ -6,11 +6,20 @@ Keyboard shortcuts:
 - cmd-shift-i: import bank transactions
 - cmd-shift-s: select all (useful when reconciling)
 
-## installation
+## Installation (Mac only for now)
 
-There are no binaries yet for OS X, you need to "compile from source":
+Download and install from [latest binary](https://github.com/philippkeller/goodbudget-electron/releases/latest)
 
-To start the app with electron
+## Installation from source
+
+If you are on Windows/Linux you need to install from source. 
+
+Prerequisits:
+
+- git
+- node/npm
+
+### Start the app with electron
 
 ```
 npm install -g electron-prebuilt
@@ -18,7 +27,7 @@ npm install
 npm start
 ```
 
-To package it into a native OS X app:
+### Package it into a native OS X app:
 
 ```
 npm install electron-packager -g
@@ -26,7 +35,7 @@ electron-packager ./ goodbudget --overwrite --platform=darwin --arch=x64 --icon 
 mv goodbudget-darwin-x64/goodbudget.app /Applications/
 ```
 
-## to package it for redistribution (mostly note to self)
+### Package it for redistribution (mostly note to self)
 
 ```
 npm i electron-installer-dmg -g
