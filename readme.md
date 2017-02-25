@@ -32,6 +32,7 @@ npm start
 ```
 npm install electron-packager -g
 electron-packager ./ goodbudget --overwrite --platform=darwin --arch=x64 --icon goodbudget.png.icns
+rm -rf /Applications/goodbudget.app
 mv goodbudget-darwin-x64/goodbudget.app /Applications/
 ```
 

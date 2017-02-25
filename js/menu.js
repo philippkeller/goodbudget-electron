@@ -14,6 +14,11 @@ const clickAll = function() {
   webView.executeJavaScript('$("input[type=checkbox]").each(function() { if(!$(this).attr("checked")) {this.click()}});');
 }
 
+const unclickAll = function() {
+  let webView = document.querySelector('webview#goodbudget');
+  webView.executeJavaScript('$("input[type=checkbox]").each(function() { if($(this).attr("checked")) {this.click()}});');
+}
+
 var template = [{
     label: "Application",
     submenu: [
@@ -39,6 +44,7 @@ var template = [{
       { label: "Add Transaction", accelerator: "Shift+CmdOrCtrl+A", click: function() { addTransaction(); }},
       { label: "Import Transactions", accelerator: "Shift+CmdOrCtrl+I", click: function() { importTransactions(); }},
       { label: "Select all Checkboxes", accelerator: "Shift+CmdOrCtrl+S", click: function() { clickAll(); }},
+      { label: "Unselect all Checkboxes", accelerator: "Shift+CmdOrCtrl+U", click: function() { unclickAll(); }},
     ]}
 ];
 Menu.setApplicationMenu(Menu.buildFromTemplate(template));
