@@ -18,6 +18,7 @@ Prerequisits:
 
 - git
 - node/npm
+- on windows run `npm install --global --production windows-build-tools` in a root console first
 
 ### Start the app with electron
 
