@@ -28,7 +28,7 @@ npm install
 npm start
 ```
 
-### Package it into a native OS X app:
+### Package it into a native app (OSX, Windows, Linux):
 
 ```
 npm install electron-packager -g
@@ -40,6 +40,8 @@ mv goodbudget-darwin-x64/goodbudget.app /Applications/
 ### Package it for redistribution (mostly note to self)
 
 ```
-npm i electron-installer-dmg -g
-electron-installer-dmg goodbudget-darwin-x64/goodbudget.app goodbudget
+npm install electron-builder -g
+npm run dist
 ```
+
+The installer is saved in `dist`
