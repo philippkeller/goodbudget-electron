@@ -6,7 +6,7 @@ Keyboard shortcuts:
 - cmd-shift-i: import bank transactions
 - cmd-shift-s: select all (useful when reconciling)
 
-## Installation (Mac only for now)
+## Installation (Windows, Mac)
 
 Download and install from [latest binary](https://github.com/philippkeller/goodbudget-electron/releases/latest)
 
