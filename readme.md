@@ -1,4 +1,4 @@
-Standalone goodbudget app for OS X that starts goodbudget into the account view ![Goodbudget in App Switcher](goodbudget.png)
+Standalone goodbudget app for Windows & OS X that starts goodbudget into the account view ![Goodbudget in App Switcher](goodbudget.png)
 
 Keyboard shortcuts:
 
