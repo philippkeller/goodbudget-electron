@@ -15,5 +15,15 @@
   },
   "dependencies": {
     "keytar": "^3.0.2"
+  },
+  "build": {
+    "appId": "com.goodbudget.electron",
+    "mac": {
+      "category": "Finance"
+    }
+  },
+  "scripts": {
+    "pack": "build --dir",
+    "dist": "build"
   }
 }
