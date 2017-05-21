@@ -19,6 +19,7 @@ Prerequisits:
 - git
 - node/npm
 - on windows run `npm install --global --production windows-build-tools` in a root console first
+- on linux you need to `sudo apt-get install libgnome-keyring-dev` first
 
 ### Start the app with electron
 
