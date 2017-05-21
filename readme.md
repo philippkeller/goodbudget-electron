@@ -29,6 +29,8 @@ npm install
 npm start
 ```
 
+On Linux `npm start` does not work. You'll need to do `electron .` instead.
+
 ### Package it into a native app (OSX, Windows, Linux):
 
 ```
